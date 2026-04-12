@@ -50,6 +50,7 @@ from .const import (
     ATTR_IS_PARKED,
     ATTR_IS_DRIVING,
     ATTR_HEADING,
+    ATTR_ODOMETER,
     DOMAIN,
 )
 
@@ -235,6 +236,16 @@ async def async_setup_entry(
             UnitOfSpeed.KILOMETERS_PER_HOUR,
             SensorDeviceClass.SPEED,
             SensorStateClass.MEASUREMENT,
+            None,
+        ),
+        ABRPSensor(
+            coordinator,
+            name_prefix,
+            "Odometer",
+            ATTR_ODOMETER,
+            UnitOfLength.KILOMETERS,
+            SensorDeviceClass.DISTANCE,
+            SensorStateClass.TOTAL_INCREASING,
             None,
         ),
         ABRPSensor(
