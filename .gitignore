@@ -15,6 +15,9 @@ home-assistant_v2.db
 .vscode/
 *.code-workspace
 
+# Claude local settings
+.claude/settings.local.json
+
 # macOS
 .DS_Store
 
